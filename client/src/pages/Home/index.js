@@ -1,11 +1,13 @@
 import React from 'react'
 import Header from '../../components/Header'
 import Intro from './intro'
-function Home(){
+function Home() {
     return (
-        <div>
+        <div >
             <Header />
-            <Intro />
+            <div className='bg-primary px-40'>
+                <Intro />
+            </div>
         </div>
     )
 }
