@@ -1,13 +1,15 @@
 import React from 'react'
 
-function SectionTitle(
+function SectionTitle({
     title,
-) {
-  return (
-    <div className='flex'>
-      <h1 className='text-2xl text-white font-semibold'>{title}</h1>
-     </div>
-  )
+}) {
+    return (
+        <div className='flex gap-10 items-center py-8'>
+            <h1 className='text-3xl text-white'>{title}</h1>
+            <div className='w-40 h-[1px] bg-tertiary'>
+            </div>
+        </div>
+    )
 }
 
 export default SectionTitle
