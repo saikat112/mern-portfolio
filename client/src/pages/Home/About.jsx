@@ -16,7 +16,7 @@ function About() {
         <div>
             <SectionTitle title="About" />
             <div className='flex w-full items-center sm:flex-col'>
-                <div className='h-[70vh] w-1/2 sm:w-full sm:h-[45vh] '>
+                <div className='h-[70vh] w-1/2 sm:w-full sm:h-[40vh]'>
                     <dotlottie-player src="https://lottie.host/f817709b-e74d-4f3a-a54a-8bfc777c8bb5/6EgxDdgXIf.json" background="transparent" speed="1" autoplay></dotlottie-player>
                 </div>
                 <div className="flex flex-col gap-5 w-1/2 sm:w-full">

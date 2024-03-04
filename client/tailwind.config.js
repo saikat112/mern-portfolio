@@ -15,13 +15,8 @@ module.exports = {
     screens: {
 
       'lg': { 'max': '2023px' },
-      // => @media (max-width: 1023px) { ... }
-
       'md': { 'max': '767px' },
-      // => @media (max-width: 767px) { ... }
-
       'sm': { 'max': '639px' },
-      // => @media (max-width: 639px) { ... }
     }
   },
   plugins: [],
