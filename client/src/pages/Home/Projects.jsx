@@ -19,6 +19,7 @@ function Projects() {
                     ))}
                 </div>
                 <div className='flex items-center justify-center gap-10 sm:flex-col'>
+
                     <img src={projects[selectedItemIndex].Image} alt="" className='h-60 w-72'/>
                     <div className='flex flex-col gap-5'>
                         <h1 className="text-secondary text-xl">{projects[selectedItemIndex].title}</h1>
