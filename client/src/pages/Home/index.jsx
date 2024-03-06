@@ -3,6 +3,8 @@ import Header from '../../components/Header'
 import Intro from './intro'
 import About from './About'
 import Experiences from './Experiences'
+import Projects from './Projects'
+import Contact from './Contact'
 function Home() {
     return (
         <div >
@@ -10,7 +12,9 @@ function Home() {
             <div className='bg-primary px-40 sm:px-5'>
                 <Intro />
                 <About />
-                <Experiences/>
+                <Experiences />
+                <Projects />
+                <Contact />
             </div>
         </div>
     )
