@@ -20,3 +20,9 @@
     background: #02354d;
     border-radius: 10px;
 }
+i{
+    cursor: pointer;
+}
+i:hover{
+    color: white ;
+}
