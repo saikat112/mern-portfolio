@@ -22,7 +22,43 @@
 }
 i{
     cursor: pointer;
+    font-size: 24px;
 }
 i:hover{
     color: white ;
+
+}
+#whatsapp:hover{
+    color:#00c24f
+}
+#linkedin:hover{
+    color: #0068c2;
+}
+.s{
+    animation: s 1s infinite;
+}
+@keyframes s{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+.m{
+    animation: m 1s infinite;
+}
+@keyframes m{
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
 }
