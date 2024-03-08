@@ -4,7 +4,7 @@ function Footer() {
     return (
         <div className='py-10'>
             <div className='h-[1px] w-full bg-gray-700'>
-                <div className='flex items-center justify-center flex-col'>
+                <div className='flex items-center justify-center flex-col -mt-8'>
                     <h1 className='text-white'>
                         Created By
                     </h1>
