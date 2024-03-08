@@ -13,7 +13,7 @@ function LeftSlider() {
                     <a href='https://x.com/RaydoxYt15952?t=OaSYnd7BRaiU5C_1PbVCwg&s=09' target="_blank">
                         <i class="ri-twitter-x-line text-gray-400 "></i>
                     </a>
-                    <a href='https://wa.me/8967181069?text=Hello%20Saikat" ' target="_blank"><i class="ri-whatsapp-line text-gray-400 " id="whatsapp"  ></i>
+                    <a href='https://wa.me/+918967181069?text=Hello%20Saikat%20We%20Went%20To%20Hire%20You' target="_blank"><i class="ri-whatsapp-line text-gray-400 " id="whatsapp"  ></i>
                     </a>
                 </div>
                 <div className='w-[1px] h-32 bg-[#125f63] sm:hidden'>
