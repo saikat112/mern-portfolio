@@ -21,7 +21,6 @@ const introSchema = new mongoose.Schema({
         require: true
     },
 });
-
 const aboutSchma = new mongoose.Schema({
     lottieURl: {
         type: String,
