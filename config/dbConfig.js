@@ -8,11 +8,3 @@ connection.on('connected', () => {
     console.log('Mongo DB Connection Succesful');
 });
 module.exports = connection;
-
-
-// , {
-//     useNewUrlParser: true,
-//     userUnifiedTopology: true,
-//     useCreateIndex: true,
-
-// }

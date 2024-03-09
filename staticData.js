@@ -7,7 +7,7 @@ const intros = [
         description: " i am make this using html css tailwindcss"
     }
 ]
-const about = [
+const abouts = [
     {
         lottieURl: "https://lottie.host/f817709b-e74d-4f3a-a54a-8bfc777c8bb5/6EgxDdgXIf.json",
         descriptionOne: "C++ was designed with systems programming and embedded, resource-constrained software and large systems in mind, with performance, efficiency ",
