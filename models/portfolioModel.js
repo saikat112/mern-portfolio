@@ -104,7 +104,7 @@ const contactSchema = new mongoose.Schema({
 module.exports = {
     Intro: mongoose.model("intros", introSchema),
     About: mongoose.model("about", aboutSchma),
-    Experience: mongoose.model("experience", experienceSchema),
+    Experience: mongoose.model("experiences", experienceSchema),
     Project: mongoose.model("projects", projectsSchema),
     Contact: mongoose.model("contact", contactSchema),
 };

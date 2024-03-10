@@ -8,7 +8,7 @@ router.get('/get-portfolio-data', async (req, res) => {
     try {
         const intros = await Intro.find();
         const about = await About.find();
-        const experience = await Experience.find();
+        const experiences = await Experience.find();
         const projects = await Project.find();
         const contact = await Contact.find();
         res.status(200).send({
@@ -16,7 +16,7 @@ router.get('/get-portfolio-data', async (req, res) => {
             about: about[0],
             projects: projects,
             contact: contact[0],
-            experience: experience,
+            experience: experiences,
         });
     } catch (error) {
         res.status(500).send(error);
