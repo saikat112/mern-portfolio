@@ -19,8 +19,8 @@ function About() {
                     <dotlottie-player src={lottieURl} background="transparent" speed="1" loop autoplay ></dotlottie-player>
                 </div>
                 <div className="flex flex-col gap-5 w-1/2 sm:w-full">
-                    <p className="text-white">{descriptionOne}</p>
-                    <p className="text-white" >{descriptionTwo}</p>
+                    <p className="text-white">{descriptionOne || ""}</p>
+                    <p className="text-white" >{descriptionTwo || ""}</p>
 
                 </div>
             </div>

@@ -5,7 +5,7 @@ function Intro() {
     const { loading, portfolioData } = useSelector((state) => state.root);
     const { intro } = portfolioData;
     const {
-        welcomeTex,
+        welcomeText,
         fastName,
         lastName,
         caption,
@@ -13,7 +13,7 @@ function Intro() {
     } = intro;
     return (
         <div className='h-[80vh] bg-primary flex flex-col items-start justify-center gap-8'>
-            <h1 className='text-white'> {welcomeTex || ''}</h1>
+            <h1 className='text-white'> {welcomeText || ''}</h1>
             <h1 className='text-7xl sm:text-3xl text-secondary font-semibold' > {fastName || ''}{lastName || ''}</h1>
             <h1 className='text-5xl sm:text-3xl text-white font-semibold' >{caption || ''}</h1>
             <p className='text-2xl sm:text-3xl text-white ' > {description || ''}</p>
