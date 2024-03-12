@@ -6,4 +6,4 @@ function AdminExperiences() {
   )
 }
 
-export default AdminExperiences
+export default AdminExperiences;
