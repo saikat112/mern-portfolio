@@ -1,11 +1,30 @@
 import React, { useState } from 'react'
 import { Form, Input } from 'antd';
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { ShowLoading, HideLoading } from "../../redux/rootSlice";
+import axios from "axios";
+import { message } from "antd";
 function AdminIntro() {
+  const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
-  const onFinish = (values) => {
-    console.log(values)
+  const onFinish = async (values) => {
+    try {
+      dispatch(ShowLoading())
+      const response = await axios.post("/api/portfolio/update-intro", {
+        ...values,
+        _id: portfolioData.intro._id,
+      });
+      dispatch(HideLoading())
+      if (response.data.success) {
+        message.success(response.data.message)
+      } else {
+        message.error(response.data.message)
+
+      }
+    } catch (error) {
+      dispatch(HideLoading());
+      message.error(error.message)
+    }
   }
   return (
     <div>
