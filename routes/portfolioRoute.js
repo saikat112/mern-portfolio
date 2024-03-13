@@ -34,7 +34,7 @@ router.post('/update-intro', async (req, res) => {
         res.status(200).send({
             data: intro,
             success: true,
-            massage: "Intro Updated Successfully"
+            message: "Intro Updated Successfully"
         }
 
         );
