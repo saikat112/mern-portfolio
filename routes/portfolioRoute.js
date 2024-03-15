@@ -64,4 +64,24 @@ router.post('/update-about', async (req, res) => {
         res.status(500).send(error);
     }
 });
+router.post('/update-experience', async (req, res) => {
+    console.log("Update experience endpoint hit", req.body);
+    try {
+        const experience = await Experience.findOneAndUpdate(
+            { _id: req.body._id },
+            req.body,
+            { new: true }
+        );
+        res.status(200).send({
+            data: experience,
+            success: true,
+            message: "Experience Updated Successfully"
+        }
+
+        );
+
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 module.exports = router;
