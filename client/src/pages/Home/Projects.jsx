@@ -8,6 +8,7 @@ function Projects() {
     const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
     const { portfolioData } = useSelector((state) => state.root);
     const { projects } = portfolioData;
+    console.log("project data",projects);
     return (
         <div>
             <SectionTitle title="projects" />

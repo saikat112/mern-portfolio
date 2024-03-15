@@ -2,9 +2,6 @@ import React from 'react'
 // import Header from '../../components/Header'
 import AdminIntro from './AdminIntro';
 import AdminAbout from './AdminAbout';
-import AdminExperiences from './AdminExperiences';
-import AdminProjects from './AdminProjects';
-import AdminContact from './AdminContact';
 import { useSelector } from 'react-redux';
 import { Tabs } from 'antd';
 
@@ -15,7 +12,7 @@ function Admin() {
   return (
     <div>
       <div>
-        <div className='p-5 bg-nav flex justify-center header'>
+        <div className='p-5 bg-primary flex justify-center header'>
           <h1 className='text-tertiary text-4xl'>ADMIN</h1>
         </div>
       </div>
@@ -23,9 +20,7 @@ function Admin() {
         <Tabs defaultActiveKey="1">
           <TabPane tab="Intro" key="1"><AdminIntro /></TabPane>
           <TabPane tab="About" key="2"><AdminAbout /></TabPane>
-          <TabPane tab="Experiences" key="3"><AdminExperiences /></TabPane>
-          <TabPane tab="Projects" key="4"><AdminProjects /></TabPane>
-          <TabPane tab="Contact" key="5"><AdminContact /></TabPane>
+
 
         </Tabs>
       </div>}
