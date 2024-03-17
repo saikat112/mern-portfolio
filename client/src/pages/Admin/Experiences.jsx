@@ -12,6 +12,8 @@ function Experiences() {
     const [showAddEditModal, setShowAddEditModal] = useState(false);
     const [selectedItemForEdit, setSelectedItemForEdit] = useState(null);
 
+    const [ type , setType ] = React.useState("add"); // add or edit
+
     const onFinish = async (values) => {
         try {
             dispatch(ShowLoading());
@@ -62,7 +64,7 @@ function Experiences() {
     return (
         <div>
             <div className="flex justify-end">
-                <button className='bg-primary px-5 py-2 text-white cursor-pointer' onClick={() => {
+                <button className='bg-primary px-5 py-2 text-white ' onClick={() => {
                     setSelectedItemForEdit(null);
                     setShowAddEditModal(true);
                 }}>Add Experience</button>
@@ -81,15 +83,22 @@ function Experiences() {
                                 onClick={() => {
                                     setSelectedItemForEdit(experience);
                                     setShowAddEditModal(true);
+                                    setType("edit");
                                 }}>Edit</button>
                         </div>
                     </div>
                 ))}
             </div>
-            <Modal visible={showAddEditModal}
+            {
+               ( type === "add" ||
+                selectedItemForEdit) &&
+                <Modal visible={showAddEditModal}
                 title={selectedItemForEdit ? "Edit Experience" : "Add Experience"}
                 footer={null}
-                onCancel={() => setShowAddEditModal(false)}>
+                onCancel={() => {
+                    setShowAddEditModal(false);
+                    setSelectedItemForEdit(null);
+                }}>
                 <Form layout="vertical" onFinish={onFinish} initialValues={selectedItemForEdit || {}}>
                     <Form.Item name="period" label="Period">
                         <input placeholder="Period" />
@@ -106,6 +115,7 @@ function Experiences() {
                     <div className="flex justify-end">
                         <button className="border-primary text-primary px-5 py-2" onClick={() => {
                             setShowAddEditModal(false);
+                            setSelectedItemForEdit(null);
                         }}>Cancel</button>
                         <button className="bg-primary text-white px-5 py-2">
                             {selectedItemForEdit ? "Update" : "Add"}
@@ -113,6 +123,8 @@ function Experiences() {
                     </div>
                 </Form>
             </Modal>
+            }
+
         </div>
     );
 }
