@@ -5,6 +5,7 @@ import AdminAbout from './AdminAbout';
 import { useSelector } from 'react-redux';
 import { Tabs } from 'antd';
 import Experiences from './Experiences';
+import AdminProjects from './AdminProjects';
 
 
 const TabPane = Tabs.TabPane;
@@ -22,6 +23,7 @@ function Admin() {
           <TabPane tab="Intro" key="1"><AdminIntro /></TabPane>
           <TabPane tab="About" key="2"><AdminAbout /></TabPane>
           <TabPane tab="Expriences" key="3"><Experiences /></TabPane>
+          <TabPane tab="Projects" key="4"><AdminProjects/></TabPane>
         </Tabs>
       </div>}
     </div>
