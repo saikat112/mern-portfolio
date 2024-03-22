@@ -98,6 +98,7 @@ router.post("/add-experience", async (req, res) => {
         res.status(500).send(error);
     }
 });
+// add experience
 router.post("/update-exprience", async (req, res) => {
     try {
         const experience = await Experience.findOneAndUpdate(
@@ -113,6 +114,7 @@ router.post("/update-exprience", async (req, res) => {
         res.status(500).send(error);
     }
 });
+// delete experience
 router.post("/delete-experience", async (req, res) => {
     try {
         const experience = await Experience.findOneAndDelete({ _id: req.body._id });
@@ -124,6 +126,40 @@ router.post("/delete-experience", async (req, res) => {
     } catch (error) {
         res.status(500).send(error);
 
+    }
+});
+// Add project
+router.post("/add-project", async (req, res) => {
+    try {
+        const project = new Project(req.body);
+        await project.save();
+        res.status(200).send({ data: project, success: true, message: "Project Added Succesfully", });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+// update project
+router.post('/update-project', async (req, res) => {
+    try {
+        const project = await Project.findOneAndUpdate(
+            { _id: req.body._id }, req.body, { new: true }
+        );
+        res.status(200).send({
+            data: project,
+            success: true,
+            message: 'The project has been updated',
+        });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+// delete project
+router.post('/delete-project', async (req, res) => {
+    try {
+        const project = await Project.findOneAndDelete({ _id: req.body._id });
+        res.status(200).send({ data: project, success: true, message: "Projects delete successfully", });
+    } catch {
+        res.status(400).send(error)
     }
 });
 module.exports = router;

@@ -12,19 +12,21 @@ function AdminProjects() {
     const [showAddEditModal, setShowAddEditModal] = useState(false);
     const [selectedItemForEdit, setSelectedItemForEdit] = useState(null);
 
-    const [ type , setType ] = React.useState("add"); // add or edit
+    const [type, setType] = React.useState("add"); // add or edit
 
     const onFinish = async (values) => {
         try {
+            const tempTechnologies = values.technologies.split(",");
+            values.technologies = tempTechnologies;
             dispatch(ShowLoading());
             let response;
             if (selectedItemForEdit) {
-                response = await axios.post("/api/portfolio/update-projects", {
+                response = await axios.post("/api/portfolio/update-project", {
                     ...values,
                     _id: selectedItemForEdit._id,
                 });
             } else {
-                response = await axios.post("/api/portfolio/add-projects", values);
+                response = await axios.post("/api/portfolio/add-project", values);
             }
             dispatch(HideLoading());
             if (response.data.success) {
@@ -44,7 +46,7 @@ function AdminProjects() {
     const onDelete = async (item) => {
         try {
             dispatch(ShowLoading());
-            const response = await axios.post("/api/portfolio/delete-experience", {
+            const response = await axios.post("/api/portfolio/delete-project", {
                 _id: item._id,
             });
             dispatch(HideLoading());
@@ -72,10 +74,11 @@ function AdminProjects() {
             <div className="grid grid-cols-3 gap-5 mt-5">
                 {projects.map((project, index) => (
                     <div className='shadow border border-gray-400 flex p-5 flex-col gap-5'>
-                        <h1 className='text-primary text-xl font-bold'>{project.title}</h1><hr /><br />
+                        <h1 className='text-primary text-xl font-bold'>{project.title}</h1>
                         <img src={project.image} alt="" className='h-60 w-80' />
-                        <h1>Role: {project.title}</h1><br />
-                        <h1>Description: {project.description}</h1><br />
+                        <h1>Role: {project.title}</h1>
+                        <h1>Technologies: {project.technologies}</h1>
+                        <h1>Description: {project.description}</h1>
                         <div className="flex justify-end gap-5 mt-5">
                             <button className='bg-red-500 text-white px-5 py-2 cursor-pointer'
                                 onClick={() => onDelete(project)}> Delete</button>
@@ -90,33 +93,42 @@ function AdminProjects() {
                 ))}
             </div>
             {
-               ( type === "add" ||
-                selectedItemForEdit) &&
+                (type === "add" ||
+                    selectedItemForEdit) &&
                 <Modal visible={showAddEditModal}
-                title={selectedItemForEdit ? "Edit Experience" : "Add Experience"}
-                footer={null}
-                onCancel={() => {
-                    setShowAddEditModal(false);
-                    setSelectedItemForEdit(null);
-                }}>
-                <Form layout="vertical" onFinish={onFinish} initialValues={selectedItemForEdit || {}}>
-                    <Form.Item name="title" label="Title">
-                        <input placeholder="Title" />
-                    </Form.Item>
-                    <Form.Item name="description" label="Description">
-                        <input placeholder="Description" />
-                    </Form.Item>
-                    <div className="flex justify-end">
-                        <button className="border-primary text-primary px-5 py-2" onClick={() => {
-                            setShowAddEditModal(false);
-                            setSelectedItemForEdit(null);
-                        }}>Cancel</button>
-                        <button className="bg-primary text-white px-5 py-2">
-                            {selectedItemForEdit ? "Update" : "Add"}
-                        </button>
-                    </div>
-                </Form>
-            </Modal>
+                    title={selectedItemForEdit ? "Edit Experience" : "Add Experience"}
+                    footer={null}
+                    onCancel={() => {
+                        setShowAddEditModal(false);
+                        setSelectedItemForEdit(null);
+                    }}>
+                    <Form layout="vertical" onFinish={onFinish} initialValues={{ ...selectedItemForEdit, technologies: selectedItemForEdit?.technologies?.join(","), } || {}}>
+                        <Form.Item name="title" label="Title">
+                            <input placeholder="Title" />
+                        </Form.Item>
+                        <Form.Item name="Image" label="Image">
+                            <input placeholder="Image" />
+                        </Form.Item>
+                        <Form.Item name="link" label="Link">
+                            <input placeholder="Link" />
+                        </Form.Item>
+                        <Form.Item name="technologies" label="Technologies">
+                            <input placeholder="Technologies" />
+                        </Form.Item>
+                        <Form.Item name="description" label="Description">
+                            <textarea placeholder="Description" />
+                        </Form.Item>
+                        <div className="flex justify-end">
+                            <button className="border-primary text-primary px-5 py-2" onClick={() => {
+                                setShowAddEditModal(false);
+                                setSelectedItemForEdit(null);
+                            }}>Cancel</button>
+                            <button className="bg-primary text-white px-5 py-2">
+                                {selectedItemForEdit ? "Update" : "Add"}
+                            </button>
+                        </div>
+                    </Form>
+                </Modal>
             }
 
         </div>

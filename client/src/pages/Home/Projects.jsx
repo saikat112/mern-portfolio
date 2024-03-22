@@ -29,9 +29,9 @@ function Projects() {
                     <div className='flex flex-col gap-5'>
                         <h1 className="text-secondary text-xl">{projects[selectedItemIndex].title}</h1>
                         <p className="text-white">{projects[selectedItemIndex].description}</p>
-                        <p className="text-white"></p>
-                        <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sint quasi dicta itaque corporis doloribus! Nihil, beatae quidem accusantium soluta fugit sapiente tempore molestias laudantium? Fuga molestias exercitationem ratione rem!
-                        </p>
+                        <p className="text-white">{projects[selectedItemIndex].technologies}</p>
+                        {/* <p className='text-white'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam sint quasi dicta itaque corporis doloribus! Nihil, beatae quidem accusantium soluta fugit sapiente tempore molestias laudantium? Fuga molestias exercitationem ratione rem!
+                        </p> */}
 
                     </div>
                 </div>
