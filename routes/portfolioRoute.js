@@ -64,6 +64,7 @@ router.post('/update-about', async (req, res) => {
         res.status(500).send(error);
     }
 });
+//update Experience
 router.post('/update-experience', async (req, res) => {
     console.log("Update experience endpoint hit", req.body);
     try {
@@ -160,6 +161,26 @@ router.post('/delete-project', async (req, res) => {
         res.status(200).send({ data: project, success: true, message: "Projects delete successfully", });
     } catch {
         res.status(400).send(error)
+    }
+});
+// Update contact
+router.post('/update-contact', async (req, res) => {
+    try {
+        const contact = await Contact.findOneAndUpdate(
+            { _id: req.body._id },
+            req.body,
+            { new: true }
+        );
+        res.status(200).send({
+            data: contact,
+            success: true,
+            message: "Contact Updated Successfully"
+        }
+
+        );
+
+    } catch (error) {
+        res.status(500).send(error);
     }
 });
 module.exports = router;
