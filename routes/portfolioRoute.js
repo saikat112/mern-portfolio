@@ -2,6 +2,7 @@ const { request, response } = require('express');
 
 const router = require('express').Router();
 const { Intro, About, Experience, Project, Contact } = require('../models/portfolioModel');
+const User = require('../models/userModel');
 const { models } = require('mongoose');
 
 // get all portfoliodtat
@@ -183,4 +184,26 @@ router.post('/update-contact', async (req, res) => {
         res.status(500).send(error);
     }
 });
+router.post("/admin-login", async (req, res) => {
+    try {
+        const user = await user.findOne({ username: req.body.username, password: req.body.password });
+        if (user) {
+            res.status(200).send({
+                data: user,
+                success: true,
+                massage: "Login Successfully",
+            })
+        }
+        else {
+            res.status(200).send({
+                data: user,
+                success: false,
+                message: "Invalid username or password",
+            });
+        }
+    }
+    catch (error) {
+            res.status(500).send(error);
+        }
+    });
 module.exports = router;
