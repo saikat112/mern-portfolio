@@ -69,7 +69,7 @@ function Experiences() {
                     setShowAddEditModal(true);
                 }}>Add Experience</button>
             </div>
-            <div className="grid grid-cols-4 gap-5 mt-5">
+            <div className="grid grid-cols-4 gap-5 mt-5 sm:grid-cols-1">
                 {experience.map((experience, index) => (
                     <div className='shadow border border-gray-400 flex p-5 flex-col'>
                         <h1 className='text-primary text-xl font-bold'>{experience.period}</h1><hr /><br />

@@ -71,7 +71,7 @@ function AdminProjects() {
                     setShowAddEditModal(true);
                 }}>Add Projects</button>
             </div>
-            <div className="grid grid-cols-3 gap-5 mt-5">
+            <div className="grid grid-cols-3 gap-5 mt-5 sm:grid-cols-1">
                 {projects.map((project, index) => (
                     <div className='shadow border border-gray-400 flex p-5 flex-col gap-5'>
                         <h1 className='text-primary text-xl font-bold'>{project.title}</h1>
