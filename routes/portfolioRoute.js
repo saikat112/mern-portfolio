@@ -184,6 +184,7 @@ router.post('/update-contact', async (req, res) => {
         res.status(500).send(error);
     }
 });
+// user login
 router.post("/admin-login", async (req, res) => {
     try {
         const user = await user.findOne({ username: req.body.username, password: req.body.password });
@@ -203,7 +204,7 @@ router.post("/admin-login", async (req, res) => {
         }
     }
     catch (error) {
-            res.status(500).send(error);
-        }
-    });
+        res.status(500).send(error);
+    }
+});
 module.exports = router;
