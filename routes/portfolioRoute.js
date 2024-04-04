@@ -187,12 +187,12 @@ router.post('/update-contact', async (req, res) => {
 // user login
 router.post("/admin-login", async (req, res) => {
     try {
-        const user = await user.findOne({ username: req.body.username, password: req.body.password });
+        const user = await User.findOne({ username: req.body.username, password: req.body.password });
         if (user) {
             res.status(200).send({
                 data: user,
                 success: true,
-                massage: "Login Successfully",
+                message: "Login Successfully",
             })
         }
         else {
