@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import Header from '../../components/Header'
 import AdminIntro from './AdminIntro';
 import AdminAbout from './AdminAbout';
@@ -12,6 +12,12 @@ import AdminContact from './AdminContact';
 const TabPane = Tabs.TabPane;
 function Admin() {
   const { portfolioData } = useSelector((state) => state.root)
+  useEffect(() => {
+if(!localStorage.getItem("tolen")){
+  window.location.href="/admin-login"
+}
+  },[])
+
   return (
     <div>
       <div>
