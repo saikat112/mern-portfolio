@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"/>
-      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-      <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <meta name="description" content="Web site created using create-react-app" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Firebase SDKs - include only the ones you need -->
+    <script defer src="/__/firebase/10.9.0/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.9.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.9.0/firebase-firestore-compat.js"></script>
+    <!-- Add other Firebase services here if needed -->
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title id="title">Saikat Portfolio</title>
-  </head>
-  <body>
+</head>
+<body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    </body>
+
+    <!-- Firebase Initialization -->
+    <script defer src="/__/firebase/init.js"></script>
+</body>
 </html>
